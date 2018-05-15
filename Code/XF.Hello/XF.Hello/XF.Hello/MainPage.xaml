@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF.Hello"
+             x:Class="XF.Hello.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="10">
+            <Label Text="Olá, Xamarin" FontAttributes="Bold" FontFamily="Arial" FontSize="30" />
+            <Entry Placeholder="Entre com seu nome" x:Name="txtTexto" />
+            <Button Text="Clique aqui" Clicked="ClicarNomeBotao" />
+            <StackLayout HorizontalOptions="Center">
+                <Button Text="Home" x:Name="btnHome"
+                        Clicked="btnHome_Clicked" />
+                <Button Text="Configurar" x:Name="btnConfig"
+                        Clicked="btnConfig_Clicked" />
+                <Button x:Name="btnConteudo" Text="Conteúdo" 
+                        Clicked="btnConteudo_Clicked" />
+                <Button x:Name="btnDataBinding" Text="Aluno" 
+                        Clicked="btnDataBinding_Clicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

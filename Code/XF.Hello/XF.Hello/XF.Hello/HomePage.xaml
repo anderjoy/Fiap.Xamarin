@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Hello.HomePage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout x:Name="rootLayout" Padding="30">
+            <Label Text="Home" FontSize="15" />
+            <StackLayout>
+
+                <BoxView HorizontalOptions="FillAndExpand" 
+                     HeightRequest="70"
+                     x:Name="boxviewCor" />
+
+                <Label Text="Vermelho" />
+                <Slider Minimum="0" Maximum="1" x:Name="sliderVermelho"
+                    ValueChanged="OnAlterarIntensidadeSlider" />
+
+                <Label Text="Verde" />
+                <Slider Minimum="0" Maximum="1" x:Name="sliderVerde" 
+                    ValueChanged="OnAlterarIntensidadeSlider" />
+
+                <Label Text="Azul" />
+                <Slider Minimum="0" Maximum="1" x:Name="sliderAzul" 
+                    ValueChanged="OnAlterarIntensidadeSlider" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

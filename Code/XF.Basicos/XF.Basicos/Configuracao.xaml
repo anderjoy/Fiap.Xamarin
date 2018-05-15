@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.ControlesBasicos.Configuracao">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TableView Grid.Row="0">
+                <TableView.Root>
+                    <TableSection Title="Privacidade">
+                        <SwitchCell x:Name="CellSendEmail" Text="Aceita receber email" On="{Binding CanSendEmail}" />
+                    </TableSection>
+                </TableView.Root>
+            </TableView>
+
+            <Entry Grid.Row="1" 
+                   x:Name="CellEmail" Placeholder="seuemail@email.com" 
+                   Text="{Binding Email}" 
+                   IsVisible="{Binding On, Source={x:Reference Name=CellSendEmail}}" />
+
+        </Grid>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

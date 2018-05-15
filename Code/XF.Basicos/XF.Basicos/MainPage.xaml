@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF.ControlesBasicos"
+             x:Class="XF.ControlesBasicos.MainPage">
+
+    <ContentPage.Content>
+        <StackLayout Padding="30" Spacing="10">
+            <Label Text="Olá, Xamarin" FontAttributes="Bold" FontFamily="Arial" FontSize="30" />
+            <Button Text="Enviar" Clicked="Click_Enviar" />
+            <Button Text="Configuração" Clicked="Click_Configuracao" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
