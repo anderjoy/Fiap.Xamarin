@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.ControlesBasicos.ConfigPage">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="85" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackLayout>
+                <TableView>
+                    <TableView.Root>
+                        <TableSection Title="Privacidade">
+                            <SwitchCell x:Name="swtEmail"
+                                    Text="Aceita receber e-mail?" On="{Binding Ativo, Mode=TwoWay}" />
+                        </TableSection>
+                    </TableView.Root>
+                </TableView>
+            </StackLayout>
+
+            <StackLayout Padding="10" Grid.Row="1">
+                <Entry x:Name="txtEmail" Text="{Binding ContaEmail}"
+                       Placeholder="Informe seu e-mail" FontSize="Small"
+                       IsVisible="{Binding On, Source={x:Reference Name=swtEmail}}" />
+            </StackLayout>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
