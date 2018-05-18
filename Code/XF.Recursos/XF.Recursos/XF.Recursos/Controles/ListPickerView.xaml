@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Recursos.Controles.ListPickerView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Picker x:Name="pikCor" Title="Hex color code" 
+                    SelectedIndexChanged="Picker_SelectedIndexChanged" />
+            <Label Text="Cor Selecionada:" />
+            <BoxView x:Name="boxCor" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

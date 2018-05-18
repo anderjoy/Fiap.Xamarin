@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Recursos.Controles.StepperView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <Label Text="Aluno: Anderson Silva" TextColor="Black" 
+                   HorizontalOptions="Start" />
+            <Label Text="Lançar nota:" TextColor="Black"
+                   HorizontalOptions="Start" />
+            <Stepper x:Name="stpIncremento"
+                     VerticalOptions="Center" HorizontalOptions="Center"
+                     Minimum="0" Maximum="10" Value="6" Increment="0.1"
+                     ValueChanged="onIncremento_Changed"/>
+            <Label Text="Nota = 6.0" TextColor="Black"
+                   HorizontalOptions="Center" VerticalOptions="Center"
+                   FontSize="Large" x:Name="lblValor" />
+            <Label x:Name="lblResultado" Text="Aprovado" FontSize="Large"
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

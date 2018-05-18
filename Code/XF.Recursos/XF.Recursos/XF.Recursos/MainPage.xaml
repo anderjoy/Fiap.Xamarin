@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF.Recursos"
+             x:Class="XF.Recursos.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label FontSize="20" Text="Controles Básicos"></Label>
+                <Button x:Name="btnEditor" Text="Editor" Clicked="btnEditor_Clicked"></Button>
+                <Button x:Name="btnPicker" Text="List Picker" Clicked="btnPicker_Clicked"></Button>
+                <Button x:Name="btnData" Text="Datas" Clicked="btnData_Clicked"></Button>
+                <Button x:Name="btnProgresso" Text="Progresso" Clicked="btnProgresso_Clicked"></Button>
+                <Button x:Name="btnStepper" Text="Stepper Control" Clicked="btnStepper_Clicked"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>
