@@ -29,5 +29,6 @@ namespace XF.MVVMBasic.Model
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-    }
+    }
+
 }
