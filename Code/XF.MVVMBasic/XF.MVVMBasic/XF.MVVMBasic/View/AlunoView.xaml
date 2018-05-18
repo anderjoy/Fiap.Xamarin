@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.MVVMBasic.View.AlunoView">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+
+            <ListView ItemsSource="{Binding Alunos}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="300">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Text="{Binding Email}" />
+                                <Label Text="{Binding Nome}" Grid.Column="1"/>
+                                <Label Text="{Binding RM}" Grid.Column="2"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button Text="Novo Aluno" Command="{Binding OnNovo}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
