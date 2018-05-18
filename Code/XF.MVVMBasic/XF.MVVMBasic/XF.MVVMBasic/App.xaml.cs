@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XF.MVVMBasic.ViewModel;
 
 namespace XF.MVVMBasic
 {
-	public partial class App : Application
+    public partial class App : Application
 	{
         public static AlunoViewModel alunoViewModel;
 
