@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Recursos.Estilo.DinamicoView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TextoAzul" TargetType="SearchBar">
+                <Setter Property="TextColor" Value="Blue" />
+            </Style>
+            <Style x:Key="TextoVermelho" TargetType="SearchBar">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+
+            <x:String x:Key="Hora">Relógio</x:String>
+            <x:Int32 x:Key="Contador">0</x:Int32>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="0,20,0,0">
+            <SearchBar Placeholder="Pesquisa" Style="{DynamicResource TextoEstiloDinamico}" />
+            <Button Text="Alterar estilo" Clicked="OnClick_AlterarEstilo" />
+            <StackLayout Padding="50">
+                <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Horário" />
+                <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{DynamicResource Hora}" />
+                <Label HorizontalOptions="Center" VerticalOptions="Center" Text="{DynamicResource Contador}"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

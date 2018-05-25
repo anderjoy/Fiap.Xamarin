@@ -14,6 +14,11 @@
                 <Button x:Name="btnData" Text="Datas" Clicked="btnData_Clicked"></Button>
                 <Button x:Name="btnProgresso" Text="Progresso" Clicked="btnProgresso_Clicked"></Button>
                 <Button x:Name="btnStepper" Text="Stepper Control" Clicked="btnStepper_Clicked"></Button>
+                <Label FontSize="20" Text="Style Resources"></Label>
+                <Button x:Name="btnSimples" Text="Estilo padrão" Clicked="btnSimples_Clicked"></Button>
+                <Button x:Name="btnGlobal" Text="Estilo Global" Clicked="btnGlobal_Clicked"></Button>
+                <Button x:Name="btnDinamico" Text="Estilo dinâmico" Clicked="btnDinamico_Clicked"></Button>
+                <Button x:Name="btnTriggers" Text="Estilo event triggres" Clicked="btnTriggers_Clicked"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

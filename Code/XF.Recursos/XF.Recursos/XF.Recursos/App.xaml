@@ -4,7 +4,83 @@
              x:Class="XF.Recursos.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
+        <!-- Application resource dictionary -->
+        <ResourceDictionary>
+            <!-- Explícito -->
+            <Style x:Key="BotaoPadrao" TargetType="Button">
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="Green" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="Small" />
+            </Style>
+            <Style x:Key="BoxViewPadrao"  TargetType="BoxView">
+                <Setter Property="Color" Value="Fuchsia" />
+            </Style>
+            <Style x:Key="LabelViewCellPai" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="FontFamily" Value="Arial" />
+                <Setter Property="FontSize" Value="16" />
+            </Style>
+            <Style x:Key="LabelViewCellFilho" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="FontFamily" Value="Arial" />
+                <Setter Property="FontSize" Value="12" />
+            </Style>
+            <Style x:Key="LabelItemListView" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="FontFamily" Value="Arial" />
+                <Setter Property="FontSize" Value="13" />
+            </Style>
+            <!-- Implícito -->
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="FontSize" Value="18" />
+                <Setter Property="FontFamily" Value="Arial" />
+            </Style>
 
-	</Application.Resources>
+            <!-- Template 2015 -->
+            <ControlTemplate x:Key="FuchsiaTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*" />
+                        <RowDefinition Height="0.8*" />
+                        <RowDefinition Height="0.1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.05*" />
+                        <ColumnDefinition Width="0.95*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.ColumnSpan="2" Style="{StaticResource BoxViewPadrao}" />
+                    <Label Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.HeaderFIAP}" TextColor="White" VerticalOptions="Center" />
+                    <ContentPresenter Grid.Row="1" Grid.ColumnSpan="2" />
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" Color="Fuchsia" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.FooterFIAP}" TextColor="White" VerticalOptions="Center" />
+                </Grid>
+            </ControlTemplate>
+
+            <!-- Template 2018 -->
+            <ControlTemplate x:Key="MaroonTemplate">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.1*" />
+                        <RowDefinition Height="0.8*" />
+                        <RowDefinition Height="0.1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.05*" />
+                        <ColumnDefinition Width="0.95*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView Grid.ColumnSpan="2" Color="Maroon" />
+                    <Label Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.HeaderFIAP}" TextColor="White" VerticalOptions="Center" />
+                    <ContentPresenter Grid.Row="1" Grid.ColumnSpan="2"  />
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" Color="Maroon" />
+                    <Label Grid.Row="2" Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.FooterFIAP}" TextColor="White" VerticalOptions="Center" />
+                </Grid>
+            </ControlTemplate>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
 </Application>
