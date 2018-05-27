@@ -5,6 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 using XF.LocalDB.Model;
+using XF.LocalDB.ViewModel;
 
 namespace XF.LocalDB
 {
@@ -14,19 +15,33 @@ namespace XF.LocalDB
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new View.Aluno.MainPage());
+            MainPage = new NavigationPage(new View.Login.LoginView() { BindingContext = LoginVM });
         }
 
-        static Aluno alunoModel;
-        public static Aluno AlunoModel
+        private static AlunoViewModel _alunoVM;
+        public static AlunoViewModel AlunoVM
         {
             get
             {
-                if (alunoModel == null)
+                if (_alunoVM == null)
                 {
-                    alunoModel = new Aluno();
+                    _alunoVM = new AlunoViewModel();
                 }
-                return alunoModel;
+                return _alunoVM;
+            }
+        }
+
+        private static LoginViewModel _loginVM;
+        public static LoginViewModel LoginVM
+        {
+            get
+            {
+                if (_loginVM == null)
+                {
+                    _loginVM = new LoginViewModel();
+                }
+
+                return _loginVM;
             }
         }
 

@@ -4,16 +4,16 @@
              x:Class="XF.LocalDB.View.Aluno.NovoAlunoView">
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <Entry x:Name="txtNome" Placeholder="Nome" />
-            <Entry x:Name="txtRM" Placeholder="RM" />
-            <Entry x:Name="txtEmail" Placeholder="E-mail" />
+            <Entry x:Name="txtNome" Placeholder="Nome" Text="{Binding AlunoModel.Nome}" />
+            <Entry x:Name="txtRM" Placeholder="RM" Text="{Binding AlunoModel.RM}" />
+            <Entry x:Name="txtEmail" Placeholder="E-mail" Text="{Binding AlunoModel.Email}" />
             <StackLayout Orientation="Horizontal">
                 <Label Text="Aprovado?" />
-                <Switch x:Name="IsAprovado" />
+                <Switch x:Name="IsAprovado" IsToggled="{Binding AlunoModel.Aprovado}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
-                <Button x:Name="btnSalvar" Text="Salvar" Clicked="OnSalvar" />
-                <Button x:Name="btnCancelar" Text="Cancelar" Clicked="OnCancelar" />
+                <Button x:Name="btnSalvar" Text="Salvar" Command="{Binding OnSalvarCMD}" />
+                <Button x:Name="btnCancelar" Text="Cancelar" Command="{Binding OnCancelarCMD}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

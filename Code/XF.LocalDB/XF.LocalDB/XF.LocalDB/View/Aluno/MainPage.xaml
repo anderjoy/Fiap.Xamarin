@@ -1,17 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="XF.LocalDB.View.Aluno.MainPage">
+             x:Class="XF.LocalDB.View.Aluno.MainPage"
+             x:Name="MainPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Adicionar" x:Name="btnAddAluno" Command="{Binding OnNovoCMD}" Order="Primary" Priority="1" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout Padding="20">
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                <Button x:Name="btnNovo" Text="Novo" Clicked="OnNovo" />
-            </StackLayout>
             <Label Text="Alunos" Font="18" />
-            <ListView x:Name="lstAlunos" ItemsSource="{Binding Alunos}" ItemTapped="OnAlunoTapped">
+            <ListView x:Name="lstAlunos" ItemsSource="{Binding Alunos}" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Editar" IsDestructive="False" Command="{Binding BindingContext.OnEditarAlunoCMD, Source={x:Reference Name=MainPage}}" CommandParameter="{Binding .}" />
+                                <MenuItem Text="Remover" IsDestructive="True" Command="{Binding BindingContext.OnRemoverCDM, Source={x:Reference Name=MainPage}}" CommandParameter="{Binding .}" />
+                            </ViewCell.ContextActions>
+                            
                             <StackLayout Padding="5,0,5,0">
                                 <Label Text="{Binding Nome}" Font="14" />
                                 <Label Text="{Binding Email}" Font="10" />

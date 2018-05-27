@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.LocalDB.View.Login.LoginView">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry x:Name="txtUserName" Placeholder="Usuername" Text="{Binding LoginModel.username, Mode=TwoWay}"  />
+            <Entry x:Name="txtPassword" Placeholder="Password" IsPassword="True" Text="{Binding LoginModel.password, Mode=TwoWay}" />
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="txtLogin" Text="Login" HorizontalOptions="Center" Command="{Binding OnLoginCMD}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
