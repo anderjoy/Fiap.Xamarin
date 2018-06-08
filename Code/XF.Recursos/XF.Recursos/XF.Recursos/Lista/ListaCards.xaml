@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF.Recursos.Lista"
+             x:Class="XF.Recursos.Lista.ListaCards"
+             Title="Lista - Cards">
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 0" />
+            <On Platform="Android" Value="10, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView SeparatorVisibility="None"
+              ItemsSource="{x:Static local:ColecaoDeCores.ResultadoCores}">
+                <ListView.RowHeight>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="iOS" Value="90" />
+                        <On Platform="Android" Value="80" />
+                    </OnPlatform>
+                </ListView.RowHeight>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="Accent" Padding="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <BoxView Color="{Binding Cor}" WidthRequest="50" HeightRequest="50" />
+                                        <StackLayout>
+                                            <Label Text="{Binding Descricao}" FontSize="22" VerticalOptions="StartAndExpand" />
+                                            <Label Text="{Binding RgbDisplay, StringFormat='RGB = {0}'}" FontSize="16" VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

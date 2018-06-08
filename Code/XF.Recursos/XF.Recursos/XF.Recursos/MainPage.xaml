@@ -22,7 +22,8 @@
                 <Label FontSize="20" Text="ListView"></Label>
                 <Button x:Name="btnListSimples" Text="Simples" Clicked="btnListSimples_Clicked"></Button>
                 <Button x:Name="btnListClasse" Text="Classe complexa" Clicked="btnListClasse_Clicked"></Button>
-                <Button x:Name="btnListProdutos" Text="Classe complexa" Clicked="btnListProdutos_Clicked"></Button>
+                <Button x:Name="btnListProdutos" Text="Produto" Clicked="btnListProdutos_Clicked"></Button>
+                <Button x:Name="btnListaCards" Text="Cards" Clicked="btnListaCards_Clicked"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
