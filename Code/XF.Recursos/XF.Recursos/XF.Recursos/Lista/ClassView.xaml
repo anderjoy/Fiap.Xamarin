@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Recursos.Lista.ClassView">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="lstCursos">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5,1,5,1">
+                                <Label Text="{Binding Titulo}" 
+                                       Style="{StaticResource LabelViewCellPai}" />
+                                <Label Text="{Binding Unidade}" 
+                                       Style="{StaticResource LabelViewCellFilho}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

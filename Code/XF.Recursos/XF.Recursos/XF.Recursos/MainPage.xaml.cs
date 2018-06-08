@@ -44,7 +44,9 @@ namespace XF.Recursos
         {
             await Navigation.PushAsync(new Estilo.SimplesView());
         }
+        #endregion
 
+        #region Estilos
         private async void btnGlobal_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Estilo.GeralView());
@@ -60,5 +62,23 @@ namespace XF.Recursos
             await Navigation.PushAsync(new Estilo.TriggersView());
         }
         #endregion
+
+        #region Lista
+        private async void btnListSimples_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.SimplesView());
+        }
+
+        private async void btnListClasse_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.ClassView());
+        }
+
+        private async void btnListProdutos_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Lista.ProdutoView());
+        }        
+        #endregion
+
     }
 }

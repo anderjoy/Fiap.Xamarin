@@ -19,6 +19,10 @@
                 <Button x:Name="btnGlobal" Text="Estilo Global" Clicked="btnGlobal_Clicked"></Button>
                 <Button x:Name="btnDinamico" Text="Estilo dinâmico" Clicked="btnDinamico_Clicked"></Button>
                 <Button x:Name="btnTriggers" Text="Estilo event triggres" Clicked="btnTriggers_Clicked"></Button>
+                <Label FontSize="20" Text="ListView"></Label>
+                <Button x:Name="btnListSimples" Text="Simples" Clicked="btnListSimples_Clicked"></Button>
+                <Button x:Name="btnListClasse" Text="Classe complexa" Clicked="btnListClasse_Clicked"></Button>
+                <Button x:Name="btnListProdutos" Text="Classe complexa" Clicked="btnListProdutos_Clicked"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
