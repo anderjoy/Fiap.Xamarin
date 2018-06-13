@@ -75,8 +75,8 @@
                     <BoxView Grid.ColumnSpan="2" Color="Maroon" />
                     <Label Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.HeaderFIAP}" TextColor="White" VerticalOptions="Center" />
                     <ContentPresenter Grid.Row="1" Grid.ColumnSpan="2"  />
-                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" Color="Maroon" />
-                    <Label Grid.Row="2" Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.FooterFIAP}" TextColor="White" VerticalOptions="Center" />
+                    <!--<BoxView Grid.Row="2" Grid.ColumnSpan="2" Color="Maroon" />-->
+                    <!--<Label Grid.Row="2" Grid.Column="1" Text="{TemplateBinding Parent.BindingContext.FooterFIAP}" TextColor="White" VerticalOptions="Center" />-->
                 </Grid>
             </ControlTemplate>
 

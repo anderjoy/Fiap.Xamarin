@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Recursos.Menu.ConfigView">
+    <ContentPage.Content>
+        <TableView>
+            <TableView.Root>
+                <TableSection Title="Privacidade">
+                    <SwitchCell Text="Rastrear localização" />
+                    <SwitchCell Text="Permitir cookies" On="True" />
+                    <SwitchCell Text="Receber Push-Notifications" />
+                </TableSection>
+                <TableSection Title="Recursos">
+                    <SwitchCell Text="Disponibilizar no mural" On="True" />
+                    <SwitchCell Text="Enviar por e-mail" />
+                </TableSection>
+            </TableView.Root>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

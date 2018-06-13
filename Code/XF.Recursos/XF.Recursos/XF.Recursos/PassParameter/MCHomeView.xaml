@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF.Recursos.PassParameter.MCHomeView">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label x:Name="lblBoasVindas" Text="Bem-vindo ao aplicativo" />
+            <Button x:Name="btnInfo" Text="Informações" Clicked="btnInfo_Clicked" />
+            <Button x:Name="btnDetalhe" Text="Detalhes" Clicked="btnDetalhe_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

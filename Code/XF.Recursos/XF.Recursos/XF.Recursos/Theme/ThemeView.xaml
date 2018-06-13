@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:template="clr-namespace:XF.Recursos.Theme"
+             x:Class="XF.Recursos.Theme.ThemeView"
+             NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.BindingContext>
+        <template:ThemeViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentView x:Name="contentView" ControlTemplate="{StaticResource FuchsiaTemplate}">
+        <StackLayout VerticalOptions="CenterAndExpand">
+            <Label Text="Aplicativo Xamarin" HorizontalOptions="Center" />
+            <Button Text="Alterar Theme" Clicked="OnButtonClicked" />
+        </StackLayout>
+    </ContentView>
+</ContentPage>
