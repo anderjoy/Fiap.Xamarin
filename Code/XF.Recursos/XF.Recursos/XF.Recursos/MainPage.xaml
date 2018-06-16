@@ -8,6 +8,15 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
+                <Label FontSize="20" Text="GPS API"></Label>
+                <Button x:Name="btnGPS" Text="GPS" Clicked="btnGPS_Clicked"></Button>                
+                
+                <Label FontSize="20" Text="Phone API"></Label>
+                <Button x:Name="btnLigar" Text="Telefone" Clicked="btnLigar_Clicked"></Button>
+
+                <Label FontSize="20" Text="Custom Control"></Label>
+                <Button x:Name="btnCustom" Text="Custom" Clicked="btnCustom_Clicked"></Button>
+
                 <Label FontSize="20" Text="Passar parametro"></Label>
                 <Button x:Name="btnHome" Text="Home" Clicked="btnHome_Clicked"></Button>
                 <Button x:Name="btnMC" Text="Messaging Center" Clicked="btnMC_Clicked"></Button>

@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{69933B10-47CD-4873-8760-0CC3F2D6D15F}</ProjectGuid>
+    <ProjectGuid>{1CBB76FD-2F46-40B5-BEC8-43F5AF190A46}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>XF.Recursos.iOS</RootNamespace>
+    <RootNamespace>XF.Contatos.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>XF.Recursos.iOS</AssemblyName>
+    <AssemblyName>XF.Contatos.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -88,10 +88,6 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="FiapBoxViewRenderer.cs" />
-    <Compile Include="FiapButtonRenderer.cs" />
-    <Compile Include="GeoLocation_iOS.cs" />
-    <Compile Include="Ligar_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -121,27 +117,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Xamarin.Mobile">
-      <HintPath>..\..\..\..\Components\Xamarin.Mobile.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
-    <PackageReference Include="xamstore-xamarin.mobile">
-      <Version>0.7.1</Version>
-    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\XF.Recursos\XF.Recursos.csproj">
-      <Project>{FC5E2D45-088D-44B3-ACA5-613AF970BCAB}</Project>
-      <Name>XF.Recursos</Name>
+    <ProjectReference Include="..\XF.Contatos\XF.Contatos.csproj">
+      <Project>{E29911BC-6087-43BA-9D1C-9BE51FA8C35A}</Project>
+      <Name>XF.Contatos</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Engine.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Home.png" />
   </ItemGroup>
 </Project>

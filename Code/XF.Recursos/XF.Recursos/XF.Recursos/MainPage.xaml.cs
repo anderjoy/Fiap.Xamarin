@@ -114,5 +114,25 @@ namespace XF.Recursos
             await Navigation.PushAsync(new PassParameter.MCHomeView());
         }
         #endregion
+
+        #region CustomControls
+        private async void btnCustom_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CustomControl.CustomView());
+        }
+        #endregion
+
+        #region API
+        private async void btnLigar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new API.PhoneView());
+        }
+
+        private async void btnGPS_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new GPS.CoordenadaView());
+        }
+        #endregion
+
     }
 }
