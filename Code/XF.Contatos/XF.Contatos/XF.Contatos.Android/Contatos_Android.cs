@@ -13,30 +13,32 @@ namespace XF.Contatos.Droid
 {
     public class Contatos_Android : IContatos
     {
-        public async Task<IEnumerable<Contato>> GetContatos()
+        public void GetContatos()
         {
             var context = MainApplication.CurrentContext as Activity;
             var book = new AddressBook(context);
 
-            if (!await book.RequestPermission())
-            {
-                Console.WriteLine("Permisão negada");
-                return null;
-            }
 
-            IList<Contato> contacts = new List<Contato>();
-            foreach (Contact contact in book.OrderBy(c => c.LastName))
+            Task.Run(async () =>
             {
-                Console.WriteLine("{0} {1}", contact.FirstName, contact.LastName);
-
-                contacts.Add(new Contato()
+                if (await book.RequestPermission())
                 {
-                    Nome = contact.FirstName + " - " + contact.LastName,
-                    Telefone = contact.Phones.FirstOrDefault()?.Number
-                });
-            }
+                    IList<Contato> contacts = new List<Contato>();
+                    foreach (Contact contact in book.ToList().OrderBy(c => c.LastName))
+                    {
+                        Console.WriteLine("{0} {1}", contact.FirstName, contact.LastName);
 
-            return contacts;
+                        contacts.Add(new Contato()
+                        {
+                            Id = contact.Id,
+                            Nome = contact.FirstName + " - " + contact.LastName,
+                            Telefone = contact.Phones.FirstOrDefault()?.Number
+                        });
+                    }
+
+                    MessagingCenter.Send<IContatos, IList<Contato>>(this, "contatos", contacts);
+                }
+            });
         }
     }
 }

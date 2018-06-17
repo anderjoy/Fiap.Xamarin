@@ -7,11 +7,13 @@ namespace XF.Contatos.API
 {
     public interface IContatos
     {
-        Task<IEnumerable<Contato>> GetContatos();
+        void GetContatos();
     }
 
     public class Contato
     {
+        public string Id { get; set; }
+
         public string Nome { get; set; }
 
         public string Telefone { get; set; }

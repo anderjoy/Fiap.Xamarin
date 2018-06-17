@@ -2,23 +2,29 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:XF.Contatos"
-             x:Class="XF.Contatos.MainPage">
+             x:Class="XF.Contatos.MainPage"
+             Title="Lista de contatos">
 
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="lstContatos" ItemsSource="{Binding ListaContatos}">
+        <StackLayout Padding="5">
+            <StackLayout Padding="5" Spacing="2">
+                <Label Text="Lista de contatos"  />
+            </StackLayout>
+            <ListView ItemsSource="{Binding Contatos}" ItemTapped="lstContatos_ItemTapped" 
+                      RowHeight="60"                      
+                      IsPullToRefreshEnabled="True" Refreshing="lstContatos_Refreshing">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="5,1,5,1">
-                                <Label Text="{Binding Nome}" />
-                                <Label Text="{Binding Telefone}" />
+                            <StackLayout>
+                                <Label Text="{Binding Nome}"  Margin="0,2,0,4" />
+                                <Label Text="{Binding Telefone}"  />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentPage.Content>
+    </ContentPage.Content>       
 
 </ContentPage>
