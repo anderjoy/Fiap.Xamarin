@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XF.Contatos.Converters"
+             x:Class="XF.Contatos.View.MainPage"
+             Title="Lista de contatos"
+             x:Name="MainPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 0" />
+            <On Platform="Android" Value="10, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="5" Spacing="2">
+                <Label Text="Lista de contatos"  />
+            </StackLayout>
+            <ListView ItemsSource="{Binding Contatos}" 
+                      ItemTapped="lstContatos_ItemTapped" 
+                      SeparatorVisibility="None" 
+                      SelectedItem="{Binding contatoSelected, Mode=TwoWay}"                                          
+                      IsPullToRefreshEnabled="True" 
+                      RefreshCommand="{Binding RefreshCommand}"
+                      IsRefreshing="{Binding IsRefreshing}">
+
+                <ListView.RowHeight>
+                    <OnPlatform x:TypeArguments="x:Int32">
+                        <On Platform="iOS" Value="90" />
+                        <On Platform="Android" Value="80" />
+                    </OnPlatform>
+                </ListView.RowHeight>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <ViewCell.ContextActions>
+                                <MenuItem Icon="call.png" Text="Ligar" Command="{Binding BindingContext.OnCallContact, Source={x:Reference Name=MainPage}}" CommandParameter="{Binding .}" />
+                            </ViewCell.ContextActions>
+                            
+                            <ContentView Padding="5">
+                                <Frame OutlineColor="Azure" Padding="10">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Aspect="AspectFit" HorizontalOptions="Start"
+                                            Source="{Binding Thumbnail, Converter={StaticResource ByteArrayToImage}}"/>
+                                        <StackLayout>
+                                            <Label Text="{Binding Nome}" FontSize="Medium" VerticalOptions="StartAndExpand" />
+                                            <Label Text="{Binding Telefone}" FontSize="Small" VerticalOptions="CenterAndExpand" />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>       
+
+</ContentPage>
