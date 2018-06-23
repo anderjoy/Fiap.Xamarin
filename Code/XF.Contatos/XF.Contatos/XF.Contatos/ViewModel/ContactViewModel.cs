@@ -154,6 +154,10 @@ namespace XF.Contatos.ViewModel
                     if (ligar != null) ligar.Discar(contact.Telefone);
                 }
             }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Aviso!", "Esse contato não possui telefone cadastrado", "Ok");
+            }
         }
 
         public void EventPropertyChanged([CallerMemberName] string propertyName = null)
