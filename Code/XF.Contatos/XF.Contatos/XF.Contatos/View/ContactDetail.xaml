@@ -12,6 +12,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Foto" Icon="camera.png" Command="{Binding TakePhotoCommand}" Order="Primary" Priority="1" />
+        <ToolbarItem Text="Ligar" Icon="call.png" Command="{Binding OnCallContact}" CommandParameter="{Binding contatoSelected}" Order="Secondary" Priority="1"/>
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
