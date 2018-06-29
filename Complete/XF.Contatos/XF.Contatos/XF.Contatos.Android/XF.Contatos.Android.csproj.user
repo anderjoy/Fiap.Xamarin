@@ -2,6 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SelectedDevice>AVD_for_Nexus_5_by_Google_Xamarin</SelectedDevice>
+    <ProjectView>ProjectFiles</ProjectView>
     <DefaultDevice>AVD_for_Nexus_5_by_Google_Xamarin</DefaultDevice>
   </PropertyGroup>
 </Project>
